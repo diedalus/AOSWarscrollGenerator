@@ -1,0 +1,16 @@
+{
+  "chooseFaction": "Fraktion wählen",
+  "saveAsPng": "Speichern",
+  "warscrollOf": "Schriftrolle der",
+  "factions": [
+    "Himmelsherrscher der Kharadron",
+    "Sturmgeschmiedete Ewige",
+    "Orruks"
+  ],
+  "quarters": {
+    "top": "BEWEGUNG",
+    "left": "AUSDAUER",
+    "right": "SCHUTZ",
+    "bottom": "KONTROLLE"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "chooseFaction": "Choose faction",
+  "saveAsPng": "Save",
+  "warscrollOf": "Warscroll of",
+  "factions": [
+    "Kharadron Overlords",
+    "Stormcast Eternals",
+    "Orruks"
+  ],
+  "quarters": {
+    "top": "MOVE",
+    "left": "HEALTH",
+    "right": "SAVE",
+    "bottom": "CONTROL"
+  }
+}

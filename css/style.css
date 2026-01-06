@@ -1,0 +1,429 @@
+/* NEU: CSS-Variablen für einfaches Theming */
+:root {
+    /* Light Mode (Standard) */
+    --bg-color: #eef0f1;
+    --text-color: #2c3e50;
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --header-bg: #ffffff;
+    --header-shadow: rgba(0, 0, 0, 0.1);
+    --select-bg: #ffffff;
+    --title-color: #34495e;
+    --unit-title-color: #34495e;
+    --placeholder-color: #7f8c8d;
+}
+
+body.dark-mode {
+    /* Dark Mode Werte */
+    --bg-color: #262626;
+    --text-color: #ecf0f1;
+    --card-bg: #4c4c4c;
+    --card-border: #2c2c2c;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --header-bg: #4c4c4c;
+    --header-shadow: rgba(0, 0, 0, 0.3);
+    --select-bg: #3c3c3c;
+    --title-color: #ecf0f1;
+    --unit-title-color: #ffffff;
+    --placeholder-color: #95a5a6;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+h1 {
+    color: var(--title-color);
+    text-align: center;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    background-color: var(--header-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--header-shadow);
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    font-size: 1.1em;
+    background-color: var(--select-bg);
+    color: var(--text-color);
+}
+
+#results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.phase-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.phase-header {
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.phase-header h2 {
+    color: white;
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.phase-gefechtsrunde_anfang .phase-header {
+    background-color: #000000;
+}
+
+.phase-heldenphase .phase-header {
+    background-color: #9f821d;
+}
+
+.phase-bewegungsphase .phase-header {
+    background-color: #838383;
+}
+
+.phase-fernkampfphase .phase-header {
+    background-color: #004d65;
+}
+
+.phase-angriffsphase .phase-header {
+    background-color: #c86519;
+}
+
+.phase-nahkampfphase .phase-header {
+    background-color: #860e16;
+}
+
+.phase-gefechtsrunde_ende .phase-header {
+    background-color: #552b79;
+}
+
+.unit-card {
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    background: var(--card-bg);
+    float: left;
+    width: 45%;
+    min-width: 250px;
+    transition: background-color 0.3s;
+}
+
+.unit-card:last-child {
+    margin-bottom: 0;
+}
+
+.unit-card h3,
+h4 {
+    margin: 0 0 5px 0;
+    color: white;
+}
+
+.unit-card strong {
+    color: var(--text-color);
+}
+
+.unit-card p {
+    margin: 5px 0 0 0;
+    font-size: 0.95em;
+}
+
+.placeholder {
+    color: var(--placeholder-color);
+    text-align: center;
+    padding: 20px;
+}
+
+#theme-toggle {
+    background: var(--header-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    padding: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+}
+
+.unit-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+}
+
+.unit-text h3,
+.unit-text h4 {
+    margin: 0;
+}
+
+.unit-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--card-border);
+}
+
+.toggle-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.phase-body {
+    padding: 10px;
+    background-color: var(--card-bg);
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    max-height: 2000px;
+}
+
+.phase-body.collapsed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#regiment-abilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#regiment-abilities-container {
+    margin-top: 20px;
+}
+
+#regiment-abilities-container-header {
+    background-color: #3c3c3c;
+}
+
+.regiment-card {
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: var(--card-bg);
+    width: 45%;
+    min-width: 250px;
+    transition: background-color 0.3s;
+}
+
+.regiment-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 6px;
+    color: white;
+}
+
+.regiment-text h3 {
+    margin: 0;
+}
+
+.regiment-card input[type="radio"] {
+    width: 20px;
+    height: 20px;
+}
+
+#improvement-abilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#regiment-abilities-container-header{
+    background-color: #3c3c3c;
+}
+
+.improvement-card {
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: var(--card-bg);
+    width: 45%;
+    min-width: 250px;
+    transition: background-color 0.3s;
+}
+
+.improvement-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 6px;
+    color: white;
+}
+
+.improvement-text h3 {
+    margin: 0;
+}
+
+.improvement-card input[type="radio"] {
+    width: 20px;
+    height: 20px;
+}
+
+#alive-units{
+    background-color: #3c3c3c;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#dead-units{
+    background-color: #3c3c3c;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.unit-pool-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.unit-pool-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: filter 0.3s, opacity 0.3s, border-color 0.3s;
+    display: block;
+}
+
+.unit-pool-icon.dead {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.unit-pool-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.unit-pool-icon-wrapper.dead {
+    border: 2px solid crimson;
+    border-radius: 50%;
+    padding: 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.unit-pool-icon-wrapper.dead::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: crimson;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.general-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background-color: crimson;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 3px;
+    line-height: 1;
+}
+
+.language-switch {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.language-button {
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.language-button:hover {
+  background-color: var(--select-bg);
+}
+
+.language-button.active {
+  border-color: var(--card-border);
+  background-color: var(--select-bg);
+}

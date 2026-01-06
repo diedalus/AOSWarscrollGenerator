@@ -1,21 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AoS Warscroll Creator</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Create and save custom Warscrolls for Warhammer units (DE / EN)." />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-  <div id="root"></div>
+  <div id="container">
+    <header class="header-wrapper" role="banner">
+      <h1>AoS Warscrollgenerator</h1>
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <div id="theme-and-lang" style="display:flex; align-items:center; gap:0.5rem;">
+          <button id="theme-toggle" type="button" aria-pressed="false" title="Toggle theme"></button>
+        </div>
+      </div>
+    </header>
 
-  <!-- Lokale JS-Bibliotheken -->
-  <script src="js/react.development.js"></script>
-  <script src="js/react-dom.development.js"></script>
-  <script src="js/html2canvas.min.js"></script>
-  <script src="js/babel.min.js"></script>
+    <main id="root" role="main">
+      <!-- App UI will be mounted here by app/warscroll.js -->
+    </main>
+  </div>
 
-  <!-- Dein React-Code (wird per Babel kompiliert) -->
-  <script type="text/babel" src="app/warscroll.jsx"></script>
+  <!-- Theme toggle (plain script) -->
+  <script src="app/js/mode.js"></script>
+
+  <!-- Vanilla JS app (no external deps) -->
+  <script src="app/warscroll.js"></script>
 </body>
 </html>
